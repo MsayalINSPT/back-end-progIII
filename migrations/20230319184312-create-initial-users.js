@@ -18,7 +18,7 @@ const initialUsers = [
   },
   {
     _id: new ObjectId('000000000000000000000001'),
-    email: 'glarriera@baseapinode.com',
+    email: 'veterinario@test.com',
     password: '$2a$10$J3Qa3YiZTxXBX7NsSXMWmeVfrnsK7GXyCQM8sQ0VpSgvULxA/DOgO', // Password1
     firstName: 'Gaston',
     lastName: 'Larriera',
@@ -36,7 +36,7 @@ const initialUsers = [
   },
   {
     _id: new ObjectId('000000000000000000000002'),
-    email: 'clopez@baseapinode.com',
+    email: 'recepcion@test.com',
     password: '$2a$10$J3Qa3YiZTxXBX7NsSXMWmeVfrnsK7GXyCQM8sQ0VpSgvULxA/DOgO', // Password1
     firstName: 'Carlos',
     lastName: 'Lopez',
@@ -46,7 +46,7 @@ const initialUsers = [
       number: '5023877',
     },
     bornDate: new Date(2000, 0, 15),
-    role: new ObjectId('000000000000000000000001'), // Client
+    role: new ObjectId('000000000000000000000002'), // Client
     isActive: true,
     createdAt: new Date(),
     updatedAt: new Date(),

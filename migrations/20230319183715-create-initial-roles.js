@@ -12,7 +12,13 @@ const initialRoles = [
   },
   {
     _id: new ObjectId('000000000000000000000001'),
-    name: 'client',
+    name: 'veterinario',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+  {
+    _id: new ObjectId('000000000000000000000002'),
+    name: 'recepcion',
     createdAt: new Date(),
     updatedAt: new Date(),
   },
