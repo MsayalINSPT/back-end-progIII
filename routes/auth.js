@@ -37,7 +37,7 @@ async function createUserToken(req, res, next) {
     }
 
     if (!result.isOk) {
-      console.error('User password is invalid. Sending 401 to client')
+      console.error('Usuario invalido Sending 401 to client')
       return res.status(401).end()
     }
 
