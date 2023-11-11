@@ -12,6 +12,10 @@ const turnoSchema = new mongoose.Schema({
   descripcion: {
     type: String,
     required: false,
+  },
+  estado: {
+    type: String,
+    required: true,
   }
 });
 
