@@ -33,8 +33,12 @@ const mascotaSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  nom: {
+    type: String,
+    required: true,
+  },
 });
 
-const Mascota = mongoose.model('Mascota', mascotaSchema);
+const Cliente = mongoose.model('Mascota', mascotaSchema);
 
-module.exports = Mascota;
+module.exports = Cliente;
