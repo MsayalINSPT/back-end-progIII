@@ -8,11 +8,11 @@ const router = express.Router()
 
 
 router.post('/', createTurno)
+router.get('/', getAllTurnos)
 
 
 async function createTurno(req, res, next) {
   console.log('createTurno: ', req.body);
-
   const turno = req.body;
 
   try {
@@ -28,6 +28,21 @@ async function createTurno(req, res, next) {
     next(err);
   }
 }
+
+
+async function getAllTurnos(req, res) {
+    console.log('getAllTurnos  ')
+
+    try {
+
+      
+      const turnos = await Turno.find({estado: 'pendiente'})
+      res.send(turnos)
+
+    } catch (err) {
+      console.log(err)
+    }
+  } 
 
 
 module.exports = router;

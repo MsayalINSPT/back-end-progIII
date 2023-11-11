@@ -12,6 +12,8 @@ router.post('/', createUser)
 router.put('/:id', updateUser)
 router.delete('/:id', deleteUser)
 
+
+
 async function getAllUsers(req, res, next) {
   console.log('getAllUsers by user ', req.user._id)
   try {
