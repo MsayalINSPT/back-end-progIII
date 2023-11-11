@@ -6,7 +6,10 @@ const cors = require('cors')
 const statusRouter = require('./routes/status')
 const authRouter = require('./routes/auth')
 const userRouter = require('./routes/user')
+
 const clientRouter = require('./routes/cliente'); // Código agregado
+const turnoRouter = require('./routes/turno'); // Código agregado
+
 const authentication = require('./middlewares/authentication')
 const authorization = require('./middlewares/authorization')
 
@@ -27,6 +30,7 @@ app.use('/', statusRouter)
 app.use('/auth', authRouter)
 app.use('/users', authentication, userRouter)
 app.use('/clients', /*authentication ,*/clientRouter); // Código agregado
+app.use('/turno', /*authentication ,*/turnoRouter); // Código agregado
 
 module.exports = app
 
