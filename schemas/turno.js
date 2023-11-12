@@ -5,6 +5,10 @@ const turnoSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  horaTurno: {
+    type: String,
+    required: true,
+  },
   nombrePaciente: {
     type: String,
     required: true,

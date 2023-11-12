@@ -9,6 +9,10 @@ const router = express.Router()
 
 router.post('/', createTurno)
 router.get('/', getAllTurnos)
+router.post('/buscar', buscarTurnosPorFecha)
+
+
+
 
 
 async function createTurno(req, res, next) {
@@ -20,7 +24,7 @@ async function createTurno(req, res, next) {
 /*     if (!req.isAdmin()) {
       return res.status(403).send('Unauthorized');
     } */
-
+    
     const turnoCreated = await Turno.create(turno);
 
     res.send(turnoCreated);
@@ -43,6 +47,23 @@ async function getAllTurnos(req, res) {
       console.log(err)
     }
   } 
+
+  async function buscarTurnosPorFecha(req, res, next) {
+    try {
+      console.log('Fecha a buscar: ')
+      console.log(req.body)
+      const fecha = req.body.fechaTurno; // Puedes recibir la fecha como parámetro de la solicitud
+  
+      // Validar si la fecha es válida antes de realizar la búsqueda
+  
+      const turnos = await Turno.find({ fechaTurno: fecha });
+      res.send(turnos);
+    } catch (err) {
+      next(err);
+    }
+  }
+  
+
 
 
 module.exports = router;

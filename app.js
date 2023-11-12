@@ -32,5 +32,7 @@ app.use('/users', authentication, userRouter)
 app.use('/clients', /*authentication ,*/clientRouter); // Código agregado
 app.use('/turno', /*authentication ,*/turnoRouter); // Código agregado
 
-module.exports = app
 
+module.exports = app
+/* s
+ */
