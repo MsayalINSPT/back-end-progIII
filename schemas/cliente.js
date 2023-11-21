@@ -1,6 +1,7 @@
+
 const mongoose = require('mongoose');
 
-const mascotaSchema = new mongoose.Schema({
+const clienteSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -13,32 +14,13 @@ const mascotaSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  email: {
-    type: String,
-    required: true,
-  },
   telefono: {
     type: String,
     required: true,
   },
-  especie: {
-    type: String,
-    required: true,
-  },
-  sexo: {
-    type: String,
-    required: true,
-  },
-  edad: {
-    type: Number,
-    required: true,
-  },
-  nom: {
-    type: String,
-    required: true,
-  },
+ 
 });
 
-const Cliente = mongoose.model('Mascota', mascotaSchema);
+const Cliente = mongoose.model('Cliente', clienteSchema);
 
 module.exports = Cliente;

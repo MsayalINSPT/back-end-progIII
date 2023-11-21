@@ -8,12 +8,15 @@ const router = express.Router()
 
 
 router.post('/', createCliente)
+router.get('/', getAllCliente)
 
-
+//------------------------ Nuevo cliente ----------------------------------
 async function createCliente(req, res, next) {
+
   console.log('createClient: ', req.body);
 
   const client = req.body;
+
 
   try {
     // Validar si el usuario tiene permisos para crear clientes
@@ -28,6 +31,24 @@ async function createCliente(req, res, next) {
     next(err);
   }
 }
+//------------------------ Todos los clientes ----------------------------------
+async function getAllCliente(req, res) {
+  console.log('getAllClientes  ')
+
+  try {
+    const clientes = await Cliente.find()
+    res.send(clientes)
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+
+//------------------------ Buscar cliente ----------------------------------
+
+//------------------------ Editar cliente ----------------------------------
+
+//------------------------ Borrar cliente ----------------------------------
 
 
 module.exports = router;
