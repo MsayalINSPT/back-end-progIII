@@ -15,7 +15,7 @@ async function createMascota(req, res, next) {
     console.log('createMascota: ', req.body);
   
     const mascota = req.body;
-    mascota.cliente_id = '000000000000000000000000'
+    //mascota.cliente_id = '000000000000000000000000'
 
   
     try {

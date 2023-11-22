@@ -9,6 +9,7 @@ const router = express.Router()
 
 router.post('/', createCliente)
 router.get('/', getAllCliente)
+router.post('/buscar_cliente', buscarPorDni)
 
 //------------------------ Nuevo cliente ----------------------------------
 async function createCliente(req, res, next) {
@@ -45,6 +46,20 @@ async function getAllCliente(req, res) {
 
 
 //------------------------ Buscar cliente ----------------------------------
+async function buscarPorDni(req, res, next) {
+  try {
+    console.log('Dni a Buscar: ')
+    console.log(req.body)
+    const dni = req.body.dni // Puedes recibir la fecha como parámetro de la solicitud
+
+    // Validar si la fecha es válida antes de realizar la búsqueda
+
+    const cliente = await Cliente.find({ dni: dni })
+    res.send(cliente)
+  } catch (err) {
+    next(err)
+  }
+}
 
 //------------------------ Editar cliente ----------------------------------
 
