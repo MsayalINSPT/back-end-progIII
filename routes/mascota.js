@@ -6,6 +6,7 @@ const Mascota = require('../schemas/mascota')
 const router = express.Router()
 
 router.post('/', createMascota)
+router.post('/buscar',buscarMascotas)
 //router.get('/', getAllMascotas)
 
 //------------------------ Nueva mascota ----------------------------------
@@ -31,5 +32,27 @@ async function createMascota(req, res, next) {
       next(err);
     }
   }
+
+  //------------------------ Buscar Mascota ----------------------------------
+
+  async function buscarMascotas(req, res, next) {
+    console.log('Buscar mascotas de: ', req.body)
+
+    try{
+      const id_dueno = req.body
+      if (!id_dueno) {
+        return res.status(400).json({ error: 'El campo cliente_id es obligatorio.' });
+    }
+        
+        const mascotas = await Mascota.find(id_dueno)
+        console.log(mascotas)
+        res.send(mascotas)
+    }
+    catch (err) {
+      next(err)
+    }
+
+  }
+
 
   module.exports = router;
